@@ -1,13 +1,35 @@
 {
-    "manifest_version": 3,
-    "name": "React Extension",
-    "version": "1.0",
-    "description": "A simple extension using React",
-    "action": {
-      "default_popup": "index.html"
-    },
-    "permissions": [
-      "activeTab"
-    ]
+  "manifest_version": 3,
+  "name": "Website Blocker",
+  "version": "1.0.0",
+  "description": "Block access to specified websites for a set duration",
+  "permissions": [
+    "webRequest",
+    "declarativeNetRequest",
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/popup.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.jpg",
+    "48": "icons/icon48.jpg",
+    "128": "icons/icon128.jpg"
   }
-  
+}
