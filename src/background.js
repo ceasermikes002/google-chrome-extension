@@ -1,22 +1,27 @@
-// src/background.js
-let blockedUrls = [];
+const iframeHosts = [
+  '*',
+];
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === 'block') {
-    blockedUrls = request.urls;
-    setTimeout(() => {
-      blockedUrls = [];
-    }, request.duration * 60 * 1000); // Convert minutes to milliseconds
-  }
+chrome.runtime.onInstalled.addListener(() => {
+  const RULE = {
+    id: 1,
+    condition: {
+      initiatorDomains: [chrome.runtime.id],
+      requestDomains: iframeHosts,
+      resourceTypes: ['sub_frame'],
+    },
+    action: {
+      type: 'modifyHeaders',
+      responseHeaders: [
+        {header: 'X-Frame-Options', operation: 'remove'},
+        {header: 'Frame-Options', operation: 'remove'},
+        // Uncomment the following line to suppress `frame-ancestors` error
+        // {header: 'Content-Security-Policy', operation: 'remove'},
+      ],
+    },
+  };
+  chrome.declarativeNetRequest.updateDynamicRules({
+    removeRuleIds: [RULE.id],
+    addRules: [RULE],
+  });
 });
-
-chrome.webRequest.onBeforeRequest.addListener(
-  (details) => {
-    if (blockedUrls.some(url => details.url.includes(url))) {
-      return { cancel: true };
-    }
-    return { cancel: false };
-  },
-  { urls: ["<all_urls>"] },
-  ["blocking"]
-);

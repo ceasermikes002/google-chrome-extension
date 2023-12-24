@@ -2,18 +2,21 @@
   "manifest_version": 3,
   "name": "Website Blocker",
   "version": "1.0.0",
-  "description": "Block access to specified websites for a set duration",
-  "permissions": [
-    "webRequest",
-    "declarativeNetRequest",
-    "storage",
-    "activeTab"
-  ],
-  "background": {
-    "service_worker": "src/background.js"
-  },
   "action": {
     "default_popup": "src/popup.html"
+  },
+  "description": "Block access to specified websites for a set duration",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "webNavigation",
+    "webRequest",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": ["*://*.example.com/"],
+  "background": {
+    "service_worker": "src/background.js"
   },
   "content_scripts": [
     {
