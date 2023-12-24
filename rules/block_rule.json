@@ -1,0 +1,13 @@
+[
+    {
+      "id": "example_rule",
+      "priority": 1,
+      "action": {
+        "type": "block"
+      },
+      "condition": {
+        "urlFilter": "example.com"
+      }
+    }
+  ]
+  
