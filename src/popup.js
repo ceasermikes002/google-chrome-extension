@@ -1,9 +1,8 @@
 // src/popup.js
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 
-// Check if root element is available
+// Find the root element in the HTML and render the Popup component inside it
 const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Root element not found");
-}
-
+ReactDOM.render(<Popup />, rootElement);
