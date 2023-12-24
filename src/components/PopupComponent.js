@@ -1,4 +1,4 @@
-// src/components/Popup.js
+// src/components/PopupComponent.js
 import React, { useState } from 'react';
 
 const Popup = ({ onBlock }) => {

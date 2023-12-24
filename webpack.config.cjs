@@ -1,16 +1,12 @@
-// webpack.config.js
+// webpack.config.cjs
 const path = require('path');
 
 module.exports = {
-  entry: {
-    background: './src/background.js',
-    content: './src/content.js',
-    popup: './src/popup.js',
-  },
+  entry: './src/popup.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
-  }, 
+    filename: 'popup.js',
+  },
   module: {
     rules: [
       {
@@ -22,6 +18,10 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },

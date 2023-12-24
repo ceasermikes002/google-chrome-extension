@@ -2,10 +2,10 @@
   "name": "focus_mode_extension",
   "version": "1.0.0",
   "description": "",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "start": "webpack serve --mode=development",
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production --config webpack.config.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
