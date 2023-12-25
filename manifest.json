@@ -11,6 +11,7 @@
     "activeTab",
     "webNavigation",
     "webRequest",
+    "webRequestBlocking",
     "declarativeNetRequest",
     "declarativeNetRequestWithHostAccess"
   ],

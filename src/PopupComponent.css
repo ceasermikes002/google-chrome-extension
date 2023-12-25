@@ -1,0 +1,100 @@
+/* src/PopupComponent.css */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.custom-popup {
+  /* Add your custom styles for the popup container */
+  width: 400px; /* Adjust the width as needed */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa; /* Adjust the background color as needed */
+}
+
+.custom-brand a {
+  text-decoration: none;
+  color: #007bff; /* Adjust the brand color as needed */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.custom-icons {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.custom-icons li a {
+  text-decoration: none;
+  color: #007bff; /* Adjust the icon color as needed */
+  font-size: 1.5rem;
+}
+.icon-div{
+  width: 200px;
+  height: 200px;
+}
+.custom-content {
+  /* Add your custom styles for the content section */
+  margin: 20px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.custom-textarea,
+.custom-input {
+  /* Add your custom styles for the textarea and input */
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.custom-btn {
+  /* Add your custom styles for the button */
+  background-color: #08305b; /* Customize the button color */
+  color: #fff; /* Customize the text color */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+.custom-footer {
+  /* Add your custom styles for the footer */
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 20px;
+}
+
+/* src/PopupComponent.css */
+/* ... Your existing styles ... */
+
+.custom-icons {
+  /* Add your custom styles for the icons */
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+/* .custom-icons li {
+} */
+
+.custom-icons a {
+  /* Add your custom styles for each icon link */
+  color: #333; /* Customize the icon color */
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.custom-icons a:hover {
+  /* Add your custom styles for the icon link on hover */
+  color: #007bff; /* Customize the hover color */
+}
